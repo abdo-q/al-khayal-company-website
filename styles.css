@@ -378,3 +378,33 @@ h1, h2, h3, p { margin-top: 0; }
   .hero-actions .button { width: 100%; }
   .hero-image-note { right: -3px; }
 }
+
+/* Moving aurora atmosphere with accessible, reduced-motion fallback. */
+.aurora-background::before {
+  inset: -12%;
+  background-size: 135% 135%;
+  animation: aurora-drift 20s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift {
+  0% { transform: translate3d(-1.5%, -1%, 0) scale(1); filter: blur(48px) hue-rotate(0deg); }
+  50% { transform: translate3d(1.5%, 1.2%, 0) scale(1.04); filter: blur(54px) hue-rotate(10deg); }
+  100% { transform: translate3d(-.5%, 2%, 0) scale(1.02); filter: blur(48px) hue-rotate(-8deg); }
+}
+.site-loader {
+  position: fixed; inset: 0; z-index: 1000; display: grid; place-content: center; justify-items: center; gap: 16px;
+  background: rgba(255,254,251,.96); backdrop-filter: blur(14px);
+  transition: opacity .4s ease, visibility .4s ease;
+}
+.site-loader::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .86;
+  background: radial-gradient(ellipse at 20% 20%, rgba(89,227,156,.48), transparent 42%), radial-gradient(ellipse at 80% 25%, rgba(40,116,240,.40), transparent 45%), radial-gradient(ellipse at 60% 90%, rgba(30,201,216,.34), transparent 45%);
+  animation: loader-aurora 8s ease-in-out infinite alternate;
+}
+.site-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-spinner { width: 58px; height: 58px; border-radius: 50%; border: 4px solid rgba(40,116,240,.16); border-top-color: #2874f0; border-left-color: #20b98a; animation: loader-spin .85s linear infinite; box-shadow: 0 0 28px rgba(40,116,240,.18); }
+.loader-label { color: #173b34; font-size: 14px; font-weight: 700; }
+@keyframes loader-spin { to { transform: rotate(360deg); } }
+@keyframes loader-aurora { to { transform: translate3d(2%, -1%, 0) scale(1.08); filter: hue-rotate(16deg); } }
+.article-related { display: grid; gap: 12px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
+.article-related h2 { margin: 0; }
+.article-related .button { justify-self: start; margin-top: 5px; }
