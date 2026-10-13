@@ -523,8 +523,10 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) { .site-loader-mark { animation: none; } .site-loader { transition: none; } }
 
 
-.visual-gallery { padding-top: 20px; }
-.visual-mosaic { columns: 4 180px; column-gap: 20px; }
-.visual-mosaic img { width: 100%; height: auto; display: block; margin: 0 0 20px; break-inside: avoid; border: 0; border-radius: 0; box-shadow: none; opacity: .93; transition: opacity .25s ease, transform .25s ease; }
-.visual-mosaic img:hover { opacity: 1; transform: translateY(-3px) rotate(-.4deg); }
-@media (max-width: 720px) { .visual-mosaic { columns: 2 130px; column-gap: 13px; } .visual-mosaic img { margin-bottom: 13px; } }
+
+
+/* Small editorial image accents: transparent, borderless and inline with the reading flow. */
+.article-inline-media { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 10px; color: inherit; }
+ .article-inline-media h2 { margin: 0; font-size: 23px; }
+.inline-article-image { width: 72px; height: 48px; flex: 0 0 auto; object-fit: cover; border: 0; border-radius: 0; background: transparent; box-shadow: none; opacity: .9; vertical-align: middle; }
+@media (max-width: 520px) { .article-inline-media { display: flex; } .inline-article-image { width: 64px; height: 44px; } }
