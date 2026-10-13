@@ -584,9 +584,9 @@ h1, h2, h3, p { margin-top: 0; }
   border: 0; border-radius: 0; box-shadow: none;
   transition: background-color .25s ease, transform .25s ease;
 }
-.article-card-service-visual svg { width: 62px; height: 62px; fill: none; stroke: var(--brand-dark); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-.article-card-service-visual--drain svg { stroke: #176b57; }
-.article-card-service-visual--oven svg { stroke: #8b5b2c; }
+.article-card-service-visual svg { width: 36px; height: 36px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .88; }
+.article-card-service-visual--drain svg { stroke: #4b9d87; }
+.article-card-service-visual--oven svg { stroke: #c48a45; }
 .service-tone-drain-1 { background: #e3f7ee; }
 .service-tone-drain-2 { background: #d5f0e5; }
 .service-tone-drain-3 { background: #c7e9dc; }
