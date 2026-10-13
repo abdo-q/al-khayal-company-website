@@ -527,3 +527,12 @@ h1, h2, h3, p { margin-top: 0; }
 .article-decoration { display: flex; align-items: center; gap: 8px; margin: 18px 0 10px; opacity: .88; }
 .article-decoration img { width: 58px; height: 40px; object-fit: contain; border-radius: 0; border: 0; background: transparent; box-shadow: none; }
 @media (max-width: 520px) { .article-decoration img { width: 52px; height: 36px; } }
+
+.article-focus { margin: 28px 0; padding-block: 18px; border-block: 1px solid var(--line); }
+.article-focus h2 { margin: 0 0 8px; font-size: 21px; }
+.article-focus p { margin: 0; }
+.article-faq { margin: 30px 0; }
+.article-faq h2 { margin-bottom: 14px; }
+.article-faq details { border-bottom: 1px solid var(--line); padding: 12px 0; }
+.article-faq summary { cursor: pointer; font-weight: 700; color: var(--brand-dark); }
+.article-faq details p { margin: 10px 0 0; color: var(--muted); }
