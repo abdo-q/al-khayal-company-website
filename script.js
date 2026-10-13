@@ -68,3 +68,18 @@
     node.textContent = new Date().getFullYear();
   });
 })();
+
+// Lightweight, privacy-respecting rating interaction for the services page.
+(() => {
+  const stars = [...document.querySelectorAll('.rating-star')];
+  const copy = document.querySelector('[data-rating-copy]');
+  const link = document.querySelector('[data-rating-link]');
+  if (!stars.length || !copy || !link) return;
+  const labels = ['نحتاج إلى توضيح أكثر', 'الخدمة واضحة جزئيًا', 'المعلومات مفيدة', 'المعلومات واضحة جدًا', 'تجربة قراءة ممتازة'];
+  const paint = (value) => {
+    stars.forEach((star) => star.classList.toggle('is-selected', Number(star.dataset.rating) <= value));
+    copy.textContent = `${labels[value - 1]} — تقييمك: ${value} من 5`;
+    link.href = `https://wa.me/966552610151?text=${encodeURIComponent(`السلام عليكم، أقيّم وضوح صفحة الخدمات بـ ${value} من 5 نجوم، وهذه ملاحظتي: `)}`;
+  };
+  stars.forEach((star) => star.addEventListener('click', () => paint(Number(star.dataset.rating))));
+})();
