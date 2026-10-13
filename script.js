@@ -1,4 +1,15 @@
 (() => {
+  const loader = document.createElement('div');
+  loader.className = 'site-loader';
+  loader.setAttribute('role', 'status');
+  loader.setAttribute('aria-label', 'جارٍ تحميل الصفحة');
+  loader.innerHTML = '<div class="site-loader-inner"><span class="site-loader-mark" aria-hidden="true"></span><span>جارٍ تحميل الصفحة…</span></div>';
+  document.documentElement.appendChild(loader);
+  const finishLoading = () => window.setTimeout(() => loader.classList.add('is-done'), 180);
+  window.addEventListener('load', finishLoading, { once: true });
+  window.setTimeout(finishLoading, 2200);
+
+
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
   if (toggle && nav) {
