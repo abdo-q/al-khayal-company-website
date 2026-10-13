@@ -525,5 +525,5 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* Small decorative photos inside city articles, used as editorial accents rather than controls. */
 .article-decoration { display: flex; align-items: center; gap: 8px; margin: 18px 0 10px; opacity: .88; }
-.article-decoration img { width: 58px; height: 40px; object-fit: cover; border-radius: 999px; border: 0; box-shadow: none; }
+.article-decoration img { width: 58px; height: 40px; object-fit: contain; border-radius: 0; border: 0; background: transparent; box-shadow: none; }
 @media (max-width: 520px) { .article-decoration img { width: 52px; height: 36px; } }
