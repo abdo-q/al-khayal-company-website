@@ -12,12 +12,6 @@ pool = [
     'images/stock-moving-unsplash.webp', 'images/stock-oven-unsplash.webp',
     'images/stock-pest-unsplash.webp', 'images/stock-electrical-unsplash.webp',
     'images/stock-cleaning-unsplash.webp',
-    *[f'images/site-gallery-{n}.webp' for n in range(13, 30)],
-    *[f'images/article-new-{n:02d}.webp' for n in range(1, 13)],
-    *[f'images/article-web-{n:02d}.webp' for n in range(1, 10)],
-    *[f'images/article-city-{name}.webp' for name in ('abha', 'buraydah', 'dammam', 'hail', 'jazan', 'jeddah', 'madinah', 'makkah', 'najran', 'riyadh', 'sakaka', 'tabuk')],
-    'images/plumbing-service.jpg', 'images/electrical-service.jpg',
-    'images/ac-service.jpg', 'images/home-services-hero.jpg',
 ]
 # Replace only category/text cards, not the three evergreen cards at the top.
 pattern = re.compile(r'(<article class="article-card article-card-text reveal"><img class="article-card-image" src=")[^"]+(" alt=")[^"]+("[^>]*>)')
