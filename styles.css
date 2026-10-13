@@ -577,3 +577,25 @@ h1, h2, h3, p { margin-top: 0; }
   box-shadow: none !important;
 }
 .articles-page .article-category-list .article-card-text { padding: 0 !important; }
+
+/* Oven and drain guides use a branded visual tile instead of photography. */
+.articles-page .article-category-list .article-card-service-visual {
+  display: grid; place-items: center; width: 100%; aspect-ratio: 1.65 / 1;
+  border: 0; border-radius: 0; box-shadow: none;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.article-card-service-visual svg { width: 62px; height: 62px; fill: none; stroke: var(--brand-dark); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.article-card-service-visual--drain svg { stroke: #176b57; }
+.article-card-service-visual--oven svg { stroke: #8b5b2c; }
+.service-tone-drain-1 { background: #e3f7ee; }
+.service-tone-drain-2 { background: #d5f0e5; }
+.service-tone-drain-3 { background: #c7e9dc; }
+.service-tone-drain-4 { background: #b9e2d2; }
+.service-tone-drain-5 { background: #abe0c9; }
+.service-tone-drain-6 { background: #9dd8bd; }
+.service-tone-oven-1 { background: #fff4df; }
+.service-tone-oven-2 { background: #ffeed0; }
+.service-tone-oven-3 { background: #fbe6c0; }
+.service-tone-oven-4 { background: #f7ddad; }
+.service-tone-oven-5 { background: #f3d59e; }
+.service-tone-oven-6 { background: #efcb8d; }
