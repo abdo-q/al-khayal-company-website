@@ -213,7 +213,7 @@ h1, h2, h3, p { margin-top: 0; }
 .band p { margin: 0; max-width: 690px; color: var(--ink-soft); font-size: 14px; }
 
 .page-hero { padding-block: 38px 25px; }
-.page-hero-inner { padding: clamp(26px,4.8vw,53px); border: 1px solid rgba(255,255,255,.86); border-radius: 30px; background: rgba(255,255,255,.57); box-shadow: 0 12px 35px rgba(23,59,52,.045); }
+.page-hero-inner { padding: clamp(26px,4.8vw,53px); border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .page-hero h1 { margin: 12px 0 9px; font-size: clamp(33px,4.4vw,51px); line-height: 1.36; }
 .page-hero p { max-width: 740px; margin: 0; color: var(--ink-soft); font-size: 16px; }
 .breadcrumbs { display: flex; gap: 8px; margin-bottom: 9px; color: var(--muted); font-size: 12px; }
@@ -463,7 +463,7 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* Floating contact controls: tucked away until pointer or keyboard focus. */
 .floating-contact {
-  right: 7px;
+  right: 0;
   opacity: 1;
   border-color: rgba(255,255,255,.72);
   box-shadow: 0 8px 24px rgba(23,59,52,.16);
@@ -472,7 +472,7 @@ h1, h2, h3, p { margin-top: 0; }
 .floating-contact a { background: rgba(23,59,52,.88); transition: width .22s ease, filter .22s ease, background-color .22s ease; }
 .floating-contact a + a { background: rgba(17,112,65,.94); }
 .floating-contact a[href^="https://wa.me/"] { background: rgba(17,112,65,.94) !important; }
-.floating-contact:hover, .floating-contact:focus-within { right: 7px; opacity: 1; box-shadow: 0 12px 30px rgba(23,59,52,.25); }
+.floating-contact:hover, .floating-contact:focus-within { right: 0; opacity: 1; box-shadow: 0 12px 30px rgba(23,59,52,.25); }
 .floating-contact a:hover, .floating-contact a:focus-visible { width: 59px; filter: brightness(1.08); }
 .floating-contact a:focus-visible { outline: 3px solid #d4f56a; outline-offset: -4px; }
 .service-detail-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
@@ -484,7 +484,7 @@ h1, h2, h3, p { margin-top: 0; }
 .service-detail-copy h2 { margin: 30px 0 12px; }
 .service-detail-copy h3 { margin: 20px 0 5px; font-size: 17px; }
 .service-detail-copy ul { padding-inline-start: 1.3em; }
-@media (max-width: 720px) { .service-detail-grid { grid-template-columns: 1fr; } .floating-contact { right: 7px; } .floating-contact:hover, .floating-contact:focus-within { right: 7px; } }
+@media (max-width: 720px) { .service-detail-grid { grid-template-columns: 1fr; } .floating-contact { right: 0; } .floating-contact:hover, .floating-contact:focus-within { right: 0; } }
 @media (prefers-reduced-motion: reduce) { .floating-contact, .floating-contact a, .service-detail-link { transition: none !important; } }
 
 /* Center the About-page hero image above its heading and copy. */
@@ -500,3 +500,14 @@ h1, h2, h3, p { margin-top: 0; }
 .about-hero-visual img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .about-hero-copy { grid-area: copy; width: min(100%, 760px); margin-inline: auto; text-align: center; }
 .about-hero-inner .breadcrumbs { justify-content: center; }
+
+/* Keep service copy and page headings clean: no card frames or filled panels. */
+.service-card { overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.service-card:hover { transform: none; box-shadow: none; }
+.service-row { overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.service-row-copy li { padding: 0; border-radius: 0; color: var(--brand-dark); background: transparent; }
+.service-row-copy li::before { content: "•"; margin-inline-end: 6px; color: var(--brand); }
+.service-detail-link { border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.service-detail-link:hover, .service-detail-link:focus-visible { background: transparent; box-shadow: none; color: var(--brand-dark); text-decoration: underline; text-underline-offset: 4px; }
+.video-card { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.video-copy .video-caption { padding: 0; border-radius: 0; background: transparent; }
