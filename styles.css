@@ -536,3 +536,14 @@ h1, h2, h3, p { margin-top: 0; }
 .article-faq details { border-bottom: 1px solid var(--line); padding: 12px 0; }
 .article-faq summary { cursor: pointer; font-weight: 700; color: var(--brand-dark); }
 .article-faq details p { margin: 10px 0 0; color: var(--muted); }
+
+/* Category groups for the imported service-guidance articles. */
+.articles-page .article-category-list { display: grid; gap: 42px; margin-top: 48px; }
+.articles-page .article-category > h2 { margin: 0 0 22px; }
+.articles-page .articles-grid-text { gap: 20px 26px; }
+.articles-page .article-card-text { padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.32); }
+.articles-page .article-card-text h3 { margin: 8px 0; font-size: 18px; line-height: 1.55; }
+.articles-page .article-card-text h3 a { color: inherit; text-decoration: none; }
+.articles-page .article-card-text h3 a:hover { color: var(--brand-dark); text-decoration: underline; }
+.articles-page .article-card-text p { min-height: 0; }
+@media (max-width: 760px) { .articles-page .article-card-text { padding: 14px 0; border-width: 0 0 1px; border-radius: 0; background: transparent; } }
