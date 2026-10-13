@@ -1,10 +1,8 @@
 (() => {
   const loader = document.querySelector('.site-loader');
   if (loader) {
-    const dismissLoader = () => window.setTimeout(() => loader.classList.add('is-hidden'), 220);
-    if (document.readyState === 'complete') dismissLoader();
-    else window.addEventListener('load', dismissLoader, { once: true });
-    window.setTimeout(dismissLoader, 2400);
+    window.setTimeout(() => loader.classList.add('is-hiding'), 2800);
+    window.setTimeout(() => loader.classList.add('is-hidden'), 3000);
   }
 
   const toggle = document.querySelector('.menu-toggle');
