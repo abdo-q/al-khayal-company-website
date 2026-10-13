@@ -1,10 +1,4 @@
 (() => {
-  const loader = document.querySelector('.site-loader');
-  if (loader) {
-    window.setTimeout(() => loader.classList.add('is-hiding'), 2800);
-    window.setTimeout(() => loader.classList.add('is-hidden'), 3000);
-  }
-
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
   if (toggle && nav) {

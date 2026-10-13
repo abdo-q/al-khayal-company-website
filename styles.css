@@ -390,32 +390,16 @@ h1, h2, h3, p { margin-top: 0; }
   50% { transform: translate3d(1.5%, 1.2%, 0) scale(1.04); filter: blur(54px) hue-rotate(10deg); }
   100% { transform: translate3d(-.5%, 2%, 0) scale(1.02); filter: blur(48px) hue-rotate(-8deg); }
 }
-.site-loader {
-  position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
-  overflow: hidden; isolation: isolate; background: #FFFEFB;
-}
-.site-loader::before {
-  content: ""; position: absolute; inset: -24px; z-index: -2; pointer-events: none; filter: blur(48px);
-  background:
-    radial-gradient(ellipse 70% 70% at -10% -20%, rgba(233,255,149,.80) 0%, rgba(233,255,149,.80) 70%, transparent 71%),
-    radial-gradient(ellipse 65% 65% at 110% 10%, rgba(89,227,156,.70) 0%, rgba(89,227,156,.70) 70%, transparent 71%),
-    radial-gradient(ellipse 70% 70% at 55% 130%, rgba(30,201,216,.65) 0%, rgba(30,201,216,.65) 70%, transparent 71%),
-    radial-gradient(ellipse 60% 60% at 90% 120%, rgba(40,116,240,.55) 0%, rgba(40,116,240,.55) 70%, transparent 71%), #FFFEFB;
-  animation: loader-aurora 8s ease-in-out infinite alternate;
-}
-.site-loader::after {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: radial-gradient(circle at center, #000 1px, transparent 1px); background-size: 4px 4px; opacity: .035;
-}
-.site-loader.is-hiding { opacity: 0; transition: opacity .2s ease; }
-.site-loader.is-hidden { visibility: hidden; pointer-events: none; }
-.loader-spinner { display: block; width: 24px; height: 24px; color: #171717; animation: loader-spin 1s linear infinite; }
-@keyframes loader-spin { to { transform: rotate(360deg); } }
-@keyframes loader-aurora {
-  0% { transform: translate3d(-1.5%, -1%, 0) scale(1); filter: blur(48px) hue-rotate(0deg); }
-  50% { transform: translate3d(1.5%, 1.2%, 0) scale(1.04); filter: blur(54px) hue-rotate(10deg); }
-  100% { transform: translate3d(-.5%, 2%, 0) scale(1.02); filter: blur(48px) hue-rotate(-8deg); }
-}
 .article-related { display: grid; gap: 12px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
 .article-related h2 { margin: 0; }
 .article-related .button { justify-self: start; margin-top: 5px; }
+
+/* Article images and unboxed long-form reading. */
+.article-card { padding: 23px; }
+.article-cover-link { display: block; overflow: hidden; margin: -23px -23px 18px; border-radius: 22px 22px 0 0; }
+.article-cover { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .35s ease; }
+.article-cover-link:hover .article-cover { transform: scale(1.035); }
+.article-card h2 { margin-bottom: 8px; font-size: 19px; line-height: 1.5; }
+.article-detail { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.article-cover-detail { margin: 0 0 24px; border-radius: 24px; }
+.whatsapp-icon { display: block; width: 30px; height: 30px; object-fit: cover; border-radius: 4px; }
