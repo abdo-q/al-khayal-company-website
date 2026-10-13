@@ -417,3 +417,5 @@ h1, h2, h3, p { margin-top: 0; }
 .floating-contact a[href^="https://wa.me/"] { background: #25D366 !important; }
 
 .floating-contact a[href^="https://wa.me/"] { background-color: #25D366 !important; }
+
+.floating-contact a[href^="https://wa.me/"]:hover { background-color: #25D366 !important; filter: none; }
