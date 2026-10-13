@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abdo-q.github.io/al-khayal-home-services/sitemap.xml
