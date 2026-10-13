@@ -565,3 +565,15 @@ h1, h2, h3, p { margin-top: 0; }
 .articles-page .article-category .article-card-image { display: block; width: 100%; height: auto; aspect-ratio: 1.65 / 1; object-fit: cover; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .articles-page .article-category .article-card-text-body { padding: 15px 4px 4px; border: 0; border-radius: 0; background: transparent; }
 @media (max-width: 760px) { .articles-page .article-category .articles-grid-text { grid-template-columns: 1fr; } }
+
+/* Hard override for imported category cards: no panel, border, radius, or background anywhere. */
+.articles-page .article-category-list .article-card-text,
+.articles-page .article-category-list .article-card-text:hover,
+.articles-page .article-category-list .article-card-text-body,
+.articles-page .article-category-list .article-card-image {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.articles-page .article-category-list .article-card-text { padding: 0 !important; }
