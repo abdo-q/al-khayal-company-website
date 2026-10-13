@@ -403,3 +403,15 @@ h1, h2, h3, p { margin-top: 0; }
 .article-detail { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .article-cover-detail { margin: 0 0 24px; border-radius: 24px; }
 .whatsapp-icon { display: block; width: 30px; height: 30px; object-fit: cover; border-radius: 4px; }
+
+/* Article cards and article reading pages stay unboxed: no panels behind text or images. */
+.articles-page .page-hero-inner,
+.article-page .page-hero-inner { padding-inline: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.articles-page .article-card { padding: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; transform: none; }
+.articles-page .article-card:hover { transform: none; box-shadow: none; }
+.article-cover-link { margin: 0 0 18px; border: 0; border-radius: 0; }
+.article-cover, .article-cover-detail { border: 0; border-radius: 0; box-shadow: none; }
+.article-page .article-detail { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.article-page .article-detail .notice { padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--ink-soft); }
+.article-page .article-related { border: 0; padding-top: 0; }
+.floating-contact a + a { background: #25D366; }
