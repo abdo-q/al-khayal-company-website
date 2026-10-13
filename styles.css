@@ -245,10 +245,15 @@ h1, h2, h3, p { margin-top: 0; }
 
 .articles-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 17px; }
 .article-card { padding: 23px; }
+.article-card-text { padding: 0; }
+.article-card-image { width: 100%; aspect-ratio: 1.65 / 1; object-fit: cover; }
+.article-card-text-body { padding: 21px 23px 23px; }
 .article-symbol { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 17px; border-radius: 15px; color: var(--brand-dark); background: rgba(89,227,156,.19); }
 .article-meta { margin-bottom: 9px; color: var(--brand); font-size: 11px; font-weight: 700; }
 .article-card h3 { font-size: 19px; }
 .article-card p { min-height: 88px; }
+.phone-link { color: #1267c7 !important; font-weight: 700; text-decoration: underline; text-decoration-color: rgba(18,103,199,.28); text-underline-offset: 3px; }
+.phone-link:hover { color: #084b99 !important; }
 .article-detail { max-width: 830px; margin-inline: auto; padding: clamp(23px,4vw,40px); border: 1px solid rgba(255,255,255,.91); border-radius: 25px; background: rgba(255,255,255,.76); box-shadow: var(--shadow-soft); }
 .article-detail h2 { margin: 28px 0 8px; font-size: 23px; }
 .article-detail p { color: var(--ink-soft); font-size: 15px; }
