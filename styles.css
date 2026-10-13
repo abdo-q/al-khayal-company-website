@@ -513,14 +513,6 @@ h1, h2, h3, p { margin-top: 0; }
 .video-copy .video-caption { padding: 0; border-radius: 0; background: transparent; }
 
 
-/* Accessible animated page loader, intentionally light and short-lived. */
-.site-loader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: rgba(255,254,251,.96); transition: opacity .35s ease, visibility .35s ease; }
-.site-loader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
-.site-loader-inner { display: grid; justify-items: center; gap: 13px; color: var(--brand-dark); font-size: 12px; font-weight: 700; }
-.site-loader-mark { position: relative; width: 56px; height: 56px; display: grid; place-items: center; border: 3px solid rgba(23,109,86,.14); border-top-color: var(--brand); border-radius: 50%; animation: loader-spin .85s linear infinite; }
-.site-loader-mark::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 7px rgba(30,201,216,.12); }
-@keyframes loader-spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .site-loader-mark { animation: none; } .site-loader { transition: none; } }
 
 
 
@@ -530,3 +522,8 @@ h1, h2, h3, p { margin-top: 0; }
  .article-inline-media h2 { margin: 0; font-size: 23px; }
 .inline-article-image { width: 72px; height: 48px; flex: 0 0 auto; object-fit: cover; border: 0; border-radius: 0; background: transparent; box-shadow: none; opacity: .9; vertical-align: middle; }
 @media (max-width: 520px) { .article-inline-media { display: flex; } .inline-article-image { width: 64px; height: 44px; } }
+
+/* Small decorative photos inside city articles, used as editorial accents rather than controls. */
+.article-decoration { display: flex; align-items: center; gap: 8px; margin: 18px 0 10px; opacity: .88; }
+.article-decoration img { width: 58px; height: 40px; object-fit: cover; border-radius: 999px; border: 0; box-shadow: none; }
+@media (max-width: 520px) { .article-decoration img { width: 52px; height: 36px; } }
