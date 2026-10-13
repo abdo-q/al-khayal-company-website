@@ -424,8 +424,8 @@ h1, h2, h3, p { margin-top: 0; }
 .articles-page .article-cover-link {
   height: 140px;
   aspect-ratio: auto;
-  border: 1px solid rgba(23,59,52,.14);
-  border-radius: 11px;
+  border: 0;
+  border-radius: 0;
 }
 .articles-page .article-cover-link .article-cover {
   width: 100%;
@@ -443,8 +443,8 @@ h1, h2, h3, p { margin-top: 0; }
   height: 210px;
   aspect-ratio: auto;
   object-fit: cover;
-  border: 1px solid rgba(23,59,52,.14);
-  border-radius: 11px;
+  border: 0;
+  border-radius: 0;
 }
 
 /* Homepage photography uses a consistent horizontal landscape crop. */
