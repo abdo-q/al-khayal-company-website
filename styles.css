@@ -436,3 +436,13 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 720px) {
   .articles-page .article-cover-link { height: 155px; }
 }
+
+/* Consistent horizontal crop on article detail pages. */
+.article-page .article-cover-detail {
+  width: 100%;
+  height: 210px;
+  aspect-ratio: auto;
+  object-fit: cover;
+  border: 1px solid rgba(23,59,52,.14);
+  border-radius: 11px;
+}
