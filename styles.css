@@ -557,3 +557,11 @@ h1, h2, h3, p { margin-top: 0; }
 .articles-page .article-card-text h3 a:hover { color: var(--brand-dark); text-decoration: underline; }
 .articles-page .article-card-text p { min-height: 0; }
 @media (max-width: 760px) { .articles-page .article-card-text { padding: 14px 0; border-width: 0 0 1px; border-radius: 0; background: transparent; } }
+
+/* Final card treatment: match the image-led cleaning cards, three across, completely unboxed. */
+.articles-page .article-category .articles-grid-text { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+.articles-page .article-category .article-card-text,
+.articles-page .article-category .article-card-text:hover { display: block; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; transform: none; }
+.articles-page .article-category .article-card-image { display: block; width: 100%; height: auto; aspect-ratio: 1.65 / 1; object-fit: cover; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.articles-page .article-category .article-card-text-body { padding: 15px 4px 4px; border: 0; border-radius: 0; background: transparent; }
+@media (max-width: 760px) { .articles-page .article-category .articles-grid-text { grid-template-columns: 1fr; } }
