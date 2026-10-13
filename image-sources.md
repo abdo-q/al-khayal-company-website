@@ -14,3 +14,12 @@
 - `images/stock-oven-unsplash.webp` — [صور إصلاح الأفران على Unsplash](https://unsplash.com/s/photos/oven-repair).
 - `images/stock-pest-unsplash.webp` — [صور مكافحة الآفات على Unsplash](https://unsplash.com/s/photos/pest-control).
 - `images/stock-electrical-unsplash.webp` — [صور قواطع الكهرباء على Unsplash](https://unsplash.com/s/photos/circuit-breaker).
+
+## صور البطاقات العمودية الجديدة
+
+تم تحديث بطاقات الأدلة العمودية بصور جديدة من نتائج البحث في مواقع الصور المجانية، مع قصّها إلى نسبة عريضة مناسبة للبطاقات. لم تُستخدم صور Pinterest نفسها لأن صفحة Pinterest لا تضمن حقوق إعادة الاستخدام للصورة الأصلية.
+
+- صور التنظيف: [Unsplash — House Cleaner](https://unsplash.com/s/photos/house-cleaner)
+- صور التكييف والإصلاح: [Unsplash — HVAC Technician](https://unsplash.com/s/photos/hvac-technician) و[Unsplash — Plumber Working](https://unsplash.com/s/photos/plumber-working)
+- صور نقل العفش والأفران: [Unsplash — Moving Services](https://unsplash.com/s/photos/moving-services) و[Unsplash — Oven Repair](https://unsplash.com/s/photos/oven-repair)
+- صور الفحص المنزلي والآفات: [Unsplash — Termite](https://unsplash.com/s/photos/termite) و[Unsplash — Home Inspection](https://unsplash.com/s/photos/home-inspection)
