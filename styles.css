@@ -297,7 +297,7 @@ h1, h2, h3, p { margin-top: 0; }
   box-shadow: 0 10px 27px rgba(23,59,52,.19);
 }
 .floating-contact a { width: 51px; min-height: 54px; display: grid; place-items: center; color: #fff; background: var(--brand); transition: filter .2s ease, width .2s ease; }
-.floating-contact a + a { border-top: 1px solid rgba(255,255,255,.23); background: #228a67; }
+.floating-contact a + a { border-top: 1px solid rgba(255,255,255,.23); background: #25D366; }
 .floating-contact a:hover { width: 57px; filter: brightness(1.08); }
 .floating-contact svg { width: 21px; height: 21px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -414,4 +414,6 @@ h1, h2, h3, p { margin-top: 0; }
 .article-page .article-detail { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .article-page .article-detail .notice { padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--ink-soft); }
 .article-page .article-related { border: 0; padding-top: 0; }
-.floating-contact a + a { background: #25D366; }
+.floating-contact a[href^="https://wa.me/"] { background: #25D366 !important; }
+
+.floating-contact a[href^="https://wa.me/"] { background-color: #25D366 !important; }
