@@ -1,300 +1,459 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/about.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/about-ac-filter.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/ac-filter-cleaning.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/stock-hvac-unsplash.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-abu-arish.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-bisha.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-dawadmi.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-majmaah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-qurayyat.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-rafha.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-rass.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-sabya.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-shaqra.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-turaif.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-unayzah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/air-conditioner-maintenance-wadi-al-dawasir.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-abha.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/stock-pipe-unsplash.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-buraydah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-dammam.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-jazan.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-jeddah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-khamis-mushait.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-khobar.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-madinah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-makkah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-riyadh.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-tabuk.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/drain-unblocking-taif.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/electrical-safety.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-electrical-safety.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-abha.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-new-01.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-buraydah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-dammam.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-jazan.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-jeddah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-khamis-mushait.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-khobar.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-madinah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-makkah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-riyadh.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-tabuk.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/furniture-moving-taif.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-abha.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-buraydah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-dammam.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-jazan.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-jeddah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-khamis-mushait.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-khobar.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-madinah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-makkah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-riyadh.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-tabuk.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/gas-oven-maintenance-taif.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-abha.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-buraydah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-dammam.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-jazan.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-jeddah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-khamis-mushait.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-khobar.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-madinah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-makkah.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-riyadh.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-tabuk.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/pest-control-taif.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles/water-leak.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/articles.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/stock-electrical-unsplash.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-abha/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-abha.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-abu-arish/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/stock-cleaning-unsplash.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-aljouf/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-sakaka.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-bisha/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-dammam/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-dammam.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-dawadmi/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-hail/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-hail.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-jazan/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-jazan.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-jeddah/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-jeddah.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-madinah/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-madinah.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-majmaah/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-makkah/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-makkah.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-najran/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-najran.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-qassim/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-buraydah.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-qurayyat/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-rafha/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-rass/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-riyadh/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-sabya/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-shaqra/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-tabuk/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/article-city-tabuk.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-turaif/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-unayzah/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/cleaning-wadi-al-dawasir/</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/contact.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/home-services-hero-wide.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services/carpet-cleaning.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services/cleaning-homes.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services/home-maintenance.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services/kitchen-bathroom-cleaning.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services/post-construction-cleaning.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services/upholstery-cleaning.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/services.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://abdo-q.github.io/al-khayal-home-services/images/ac-service.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://abdo-q.github.io/al-khayal-home-services/video.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
 </urlset>
