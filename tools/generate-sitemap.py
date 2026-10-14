@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate separate XML sitemaps for public pages and their content images."""
+"""Generate a page sitemap and a focused sitemap for eight content images."""
 
 from __future__ import annotations
 
@@ -12,6 +12,16 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_ORIGIN = "https://abdo-q.github.io/al-khayal-home-services/"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 IMAGE_NS = "http://www.google.com/schemas/sitemap-image/1.1"
+INDEXED_IMAGE_FILENAMES = {
+    "home-services-hero.jpg",
+    "stock-cleaning-unsplash.webp",
+    "stock-hvac-unsplash.webp",
+    "stock-pipe-unsplash.webp",
+    "stock-electrical-unsplash.webp",
+    "article-new-01.webp",
+    "article-new-05.webp",
+    "article-web-01.webp",
+}
 ET.register_namespace("", SITEMAP_NS)
 ET.register_namespace("image", IMAGE_NS)
 
@@ -48,8 +58,7 @@ def content_images(page: Path) -> list[str]:
         local_path = (page.parent / parsed.path).resolve()
         if not local_path.is_file() or not local_path.is_relative_to(ROOT):
             continue
-        name = local_path.name.lower()
-        if any(token in name for token in ("logo", "favicon", "whatsapp", "icon")):
+        if local_path.name not in INDEXED_IMAGE_FILENAMES:
             continue
         relative = local_path.relative_to(ROOT).as_posix()
         result.add(urljoin(SITE_ORIGIN, quote(relative, safe="/")))
@@ -70,25 +79,23 @@ def main() -> None:
 
     page_root = ET.Element(f"{{{SITEMAP_NS}}}urlset")
     image_root = ET.Element(f"{{{SITEMAP_NS}}}urlset")
-    image_count = 0
+    indexed_images: set[str] = set()
     for page in pages:
         loc = page_url(page)
         ET.SubElement(ET.SubElement(page_root, f"{{{SITEMAP_NS}}}url"), f"{{{SITEMAP_NS}}}loc").text = loc
-        images = content_images(page)
-        if images:
+        new_images = [image for image in content_images(page) if image not in indexed_images]
+        if new_images:
             image_entry = ET.SubElement(image_root, f"{{{SITEMAP_NS}}}url")
             ET.SubElement(image_entry, f"{{{SITEMAP_NS}}}loc").text = loc
-            for image_url in images:
+            for image_url in new_images:
                 image = ET.SubElement(image_entry, f"{{{IMAGE_NS}}}image")
                 ET.SubElement(image, f"{{{IMAGE_NS}}}loc").text = image_url
-                image_count += 1
+                indexed_images.add(image_url)
 
-    page_path = ROOT / "sitemap.xml"
-    image_path = ROOT / "image-sitemap.xml"
-    save_xml(page_root, page_path)
-    save_xml(image_root, image_path)
-    print(f"Wrote {page_path.name}: {len(pages)} page URLs")
-    print(f"Wrote {image_path.name}: {image_count} content-image entries")
+    save_xml(page_root, ROOT / "sitemap.xml")
+    save_xml(image_root, ROOT / "image-sitemap.xml")
+    print(f"Wrote sitemap.xml: {len(pages)} page URLs")
+    print(f"Wrote image-sitemap.xml: {len(indexed_images)} selected image URLs")
 
 
 if __name__ == "__main__":
