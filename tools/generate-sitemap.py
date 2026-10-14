@@ -93,8 +93,10 @@ def main() -> None:
                 indexed_images.add(image_url)
 
     save_xml(page_root, ROOT / "sitemap.xml")
+    save_xml(page_root, ROOT / "pages-sitemap.xml")
     save_xml(image_root, ROOT / "image-sitemap.xml")
     print(f"Wrote sitemap.xml: {len(pages)} page URLs")
+    print(f"Wrote pages-sitemap.xml: {len(pages)} page URLs")
     print(f"Wrote image-sitemap.xml: {len(indexed_images)} selected image URLs")
 
 
