@@ -66,17 +66,16 @@ def main() -> None:
     pages = sorted(
         page for page in ROOT.rglob("*.html")
         if ".git" not in page.relative_to(ROOT).parts
+        and not page.read_text(encoding="utf-8", errors="replace").lstrip().startswith("google-site-verification:")
     )
     root = ET.Element(f"{{{SITEMAP_NS}}}urlset")
     image_count = 0
     for page in pages:
         entry = ET.SubElement(root, f"{{{SITEMAP_NS}}}url")
         ET.SubElement(entry, f"{{{SITEMAP_NS}}}loc").text = page_url(page)
-        for image_url, caption in content_images(page):
+        for image_url, _caption in content_images(page):
             image = ET.SubElement(entry, f"{{{IMAGE_NS}}}image")
             ET.SubElement(image, f"{{{IMAGE_NS}}}loc").text = image_url
-            if caption:
-                ET.SubElement(image, f"{{{IMAGE_NS}}}caption").text = caption
             image_count += 1
 
     ET.indent(root, space="  ")
