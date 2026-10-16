@@ -619,3 +619,10 @@ h1, h2, h3, p { margin-top: 0; }
 .city-contact-cta p { margin:0; }
 @media (max-width:760px) { .home-service-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; } .home-service-links a { min-height:54px; padding:12px; font-size:14px; } }
 @media (max-width:420px) { .home-service-links { grid-template-columns:1fr; } }
+
+
+/* Descriptive, responsive page-cover images for sections that previously had no visible image. */
+.seo-image-section{padding-top:0}
+.seo-page-image{width:min(100%,1120px);margin:0 auto 8px;overflow:hidden;border:1px solid rgba(25,55,70,.12);border-radius:22px;background:#fff;box-shadow:0 14px 34px rgba(20,45,55,.10)}
+.seo-page-image img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+@media(max-width:600px){.seo-page-image{border-radius:15px}.seo-page-image img{aspect-ratio:4/3}}
