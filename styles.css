@@ -647,3 +647,20 @@ h1, h2, h3, p { margin-top: 0; }
 .article-comments-fallback.is-visible { display: block; }
 .article-comments-fallback a { color: var(--brand-dark); font-weight: 700; text-underline-offset: 3px; }
 @media (max-width: 520px) { .article-engagement { gap: 22px; margin-top: 30px; padding-top: 20px; } .article-rating h2, .article-comments h2 { font-size: 20px; } .article-rating-star { width: 40px; height: 40px; } }
+
+/* Contextual SEO links: visible blue editorial links, not hidden keyword stuffing. */
+.keyword-links-section { margin: 34px auto 0; padding: 24px 0 8px; border-top: 1px solid rgba(55,125,105,.18); }
+.keyword-links-section .container { max-width: 1120px; }
+.keyword-links-section h2 { margin: 0 0 7px; color: var(--brand-dark); font-size: 21px; }
+.keyword-links-section p { margin: 0 0 12px; color: var(--muted); }
+.keyword-links-section ul { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding: 0; list-style: none; }
+.article-keyword-link { color: #1267b1; font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.article-keyword-link:hover, .article-keyword-link:focus-visible { color: #0a4380; }
+.article-unique-note { margin: 28px 0; padding: 18px 20px; border-inline-start: 3px solid #377d69; background: rgba(55,125,105,.07); }
+.article-unique-note h2 { margin: 0 0 8px; color: var(--brand-dark); font-size: 20px; }
+.article-unique-note p { margin: 7px 0 0; }
+@media (max-width: 600px) {
+  .keyword-links-section { margin-top: 26px; padding-top: 20px; }
+  .keyword-links-section ul { display: grid; gap: 9px; }
+  .article-unique-note { padding: 16px; }
+}
