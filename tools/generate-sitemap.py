@@ -9,7 +9,7 @@ from urllib.parse import quote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE_ORIGIN = "https://abdo-q.github.io/al-khayal-home-services/"
+SITE_ORIGIN = "https://al-khayal.space/"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 IMAGE_NS = "http://www.google.com/schemas/sitemap-image/1.1"
 INDEXED_IMAGE_FILENAMES = {

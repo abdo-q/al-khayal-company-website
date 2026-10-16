@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdo-q.github.io/al-khayal-home-services/sitemap.xml
-Sitemap: https://abdo-q.github.io/al-khayal-home-services/pages-sitemap.xml
-Sitemap: https://abdo-q.github.io/al-khayal-home-services/image-sitemap.xml
+Sitemap: https://al-khayal.space/sitemap.xml
+Sitemap: https://al-khayal.space/pages-sitemap.xml
+Sitemap: https://al-khayal.space/image-sitemap.xml

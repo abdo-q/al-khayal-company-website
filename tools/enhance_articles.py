@@ -32,7 +32,7 @@ category_cover = {
 
 def abs_url(src: str, depth: int) -> str:
     src = src.replace('../', '')
-    return 'https://abdo-q.github.io/al-khayal-home-services/' + src
+    return 'https://al-khayal.space/' + src
 
 def add_meta(html: str, image_url: str, alt: str) -> str:
     html = re.sub(r'(<meta name="twitter:card" content=")[^"]+', r'\g<1>summary_large_image', html, count=1)
@@ -87,7 +87,7 @@ for path in files:
         image_url = abs_url(match.group(1), depth)
         alt = match.group(2) or 'صورة توضيحية من مقال الخيال للخدمات المنزلية'
     else:
-        image_url = 'https://abdo-q.github.io/al-khayal-home-services/images/article-city-riyadh.webp'
+        image_url = 'https://al-khayal.space/images/article-city-riyadh.webp'
         alt = 'صورة توضيحية لمقال خدمات منزلية'
     html = add_meta(html, image_url, alt)
     # Mark non-hero images as async where the attribute is absent.
@@ -105,7 +105,7 @@ replacements = {
 for path, (src, alt) in replacements.items():
     html = path.read_text(encoding='utf-8')
     html = re.sub(r'(<img[^>]+class="article-cover article-cover-detail"[^>]+src=")[^"]+("[^>]+alt=")[^"]+("[^>]*>)', rf'\g<1>{src}\g<2>{alt}\g<3>', html, count=1)
-    image_url = 'https://abdo-q.github.io/al-khayal-home-services/' + src.replace('../', '')
+    image_url = 'https://al-khayal.space/' + src.replace('../', '')
     html = re.sub(r'(<meta property="og:image" content=")[^"]+', rf'\g<1>{image_url}', html, count=1)
     html = re.sub(r'(<meta name="twitter:image" content=")[^"]+', rf'\g<1>{image_url}', html, count=1)
     first = html.find('<script type="application/ld+json">')
