@@ -1,6 +1,26 @@
 (() => {
 
 
+  // Brief branded loading veil while the document finishes loading.
+  const pageLoader = document.createElement('div');
+  pageLoader.className = 'site-page-loader';
+  pageLoader.setAttribute('role', 'status');
+  pageLoader.setAttribute('aria-live', 'polite');
+  pageLoader.innerHTML = '<span class="site-page-loader__spinner" aria-hidden="true"></span><span>جارٍ تجهيز الصفحة…</span>';
+  document.body.appendChild(pageLoader);
+  let loaderDismissed = false;
+  const hidePageLoader = () => {
+    if (loaderDismissed) return;
+    loaderDismissed = true;
+    window.setTimeout(() => {
+      pageLoader.classList.add('is-hidden');
+      window.setTimeout(() => pageLoader.remove(), 350);
+    }, 180);
+  };
+  if (document.readyState === 'complete') hidePageLoader();
+  else window.addEventListener('load', hidePageLoader, { once: true });
+  window.setTimeout(hidePageLoader, 1800);
+
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
   if (toggle && nav) {
