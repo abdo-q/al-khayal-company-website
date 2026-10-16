@@ -1,5 +1,4 @@
 (() => {
-
   // Brief branded loading veil; always removed on load or after a short safety timeout.
   const pageLoader = document.createElement('div');
   pageLoader.className = 'site-page-loader';
@@ -19,7 +18,6 @@
   if (document.readyState === 'complete') hidePageLoader();
   else window.addEventListener('load', hidePageLoader, { once: true });
   window.setTimeout(hidePageLoader, 1600);
-
 
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
@@ -75,6 +73,7 @@
       window.open(`https://wa.me/966552610151?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
     });
   }
+
   document.querySelectorAll('[data-year]').forEach((node) => {
     node.textContent = new Date().getFullYear();
   });
@@ -83,93 +82,86 @@
   if (article && document.body.classList.contains('article-page')) {
     const engagement = document.createElement('section');
     engagement.className = 'article-engagement';
-    engagement.setAttribute('aria-label', 'تقييم المقال والتعليقات');
-
-    const ratingSection = document.createElement('section');
-    ratingSection.className = 'article-rating';
-    ratingSection.setAttribute('aria-labelledby', 'article-rating-title');
-    ratingSection.innerHTML = '<h2 id="article-rating-title">ما رأيك في هذا المقال؟</h2><p class="article-rating-note">قيّم فائدته من نجمة إلى خمس نجوم. يُحفظ تقييمك في هذا المتصفح فقط ولا يُعرض كمتوسط عام.</p>';
-    const ratingGroup = document.createElement('div');
-    ratingGroup.className = 'article-rating-stars';
-    ratingGroup.setAttribute('role', 'group');
-    ratingGroup.setAttribute('aria-label', 'اختر تقييمًا من نجمة إلى خمس نجوم');
-    const ratingStatus = document.createElement('p');
-    ratingStatus.className = 'article-rating-status';
-    ratingStatus.setAttribute('aria-live', 'polite');
-
-    const ratingKey = `alkhayal:article-rating:${window.location.pathname}`;
-    let savedRating = 0;
-    try {
-      const value = Number(window.localStorage.getItem(ratingKey));
-      if (Number.isInteger(value) && value >= 1 && value <= 5) savedRating = value;
-    } catch (_) {
-      // Local storage can be unavailable in private/restricted browsing modes.
-    }
-
-    const starButtons = [];
-    const paintRating = (value) => {
-      starButtons.forEach((button, index) => {
-        button.classList.toggle('is-selected', index < value);
-        button.setAttribute('aria-pressed', String(index + 1 === value));
-      });
-    };
-    for (let score = 1; score <= 5; score += 1) {
-      const button = document.createElement('button');
-      button.className = 'article-rating-star';
-      button.type = 'button';
-      button.textContent = '★';
-      button.setAttribute('aria-label', `${score} ${score === 1 ? 'نجمة' : 'نجوم'}`);
-      button.setAttribute('aria-pressed', 'false');
-      button.addEventListener('click', () => {
-        savedRating = score;
-        paintRating(score);
-        try {
-          window.localStorage.setItem(ratingKey, String(score));
-          ratingStatus.textContent = `شكرًا لك؛ حُفظ تقييمك (${score} من 5) في هذا المتصفح.`;
-        } catch (_) {
-          ratingStatus.textContent = `شكرًا لك على تقييم المقال (${score} من 5). تعذّر حفظه في هذا المتصفح.`;
-        }
-      });
-      starButtons.push(button);
-      ratingGroup.appendChild(button);
-    }
-    paintRating(savedRating);
-    ratingStatus.textContent = savedRating
-      ? `تقييمك المحفوظ في هذا المتصفح: ${savedRating} من 5.`
-      : 'لن يظهر تقييم عام؛ يمكنك تغيير اختيارك في أي وقت.';
-    ratingSection.append(ratingGroup, ratingStatus);
+    engagement.setAttribute('aria-label', 'التعليقات');
 
     const commentsSection = document.createElement('section');
     commentsSection.className = 'article-comments';
     commentsSection.setAttribute('aria-labelledby', 'article-comments-title');
-    commentsSection.innerHTML = '<h2 id="article-comments-title">النقاش والتعليقات</h2><p class="article-comments-intro">شارك سؤالًا أو تجربة تساعد القرّاء. تُدار التعليقات عبر GitHub Discussions.</p>';
-    const giscusContainer = document.createElement('div');
-    giscusContainer.className = 'article-giscus';
-    const fallback = document.createElement('p');
-    fallback.className = 'article-comments-fallback';
-    fallback.innerHTML = 'إذا لم تظهر مساحة التعليقات، <a href="https://github.com/abdo-q/al-khayal-home-services/discussions" target="_blank" rel="noopener noreferrer">افتح النقاشات على GitHub</a>.';
-    const giscusScript = document.createElement('script');
-    giscusScript.src = 'https://giscus.app/client.js';
-    giscusScript.async = true;
-    giscusScript.crossOrigin = 'anonymous';
-    giscusScript.setAttribute('data-repo', 'abdo-q/al-khayal-home-services');
-    giscusScript.setAttribute('data-repo-id', 'R_kgDOVG-KiQ');
-    giscusScript.setAttribute('data-category', 'General');
-    giscusScript.setAttribute('data-category-id', 'DIC_kwDOVG-Ki4DIkXy');
-    giscusScript.setAttribute('data-mapping', 'pathname');
-    giscusScript.setAttribute('data-strict', '0');
-    giscusScript.setAttribute('data-reactions-enabled', '1');
-    giscusScript.setAttribute('data-emit-metadata', '0');
-    giscusScript.setAttribute('data-input-position', 'top');
-    giscusScript.setAttribute('data-theme', 'light');
-    giscusScript.setAttribute('data-lang', 'ar');
-    giscusScript.addEventListener('error', () => fallback.classList.add('is-visible'), { once: true });
-    giscusContainer.append(giscusScript, fallback);
-    commentsSection.appendChild(giscusContainer);
-    engagement.append(ratingSection, commentsSection);
+    commentsSection.innerHTML = '<h2 id="article-comments-title">التعليقات</h2><p class="article-comments-intro">اكتب تعليقك أو سؤالك دون الحاجة إلى تسجيل الدخول. يُرجى عدم نشر معلومات شخصية أو أرقام خاصة.</p>';
+
+    const commentsRoot = document.createElement('div');
+    commentsRoot.className = 'article-hcb';
+    commentsRoot.innerHTML = '<div id="HCB_comment_box" dir="rtl" lang="ar" aria-live="polite">جارٍ تحميل التعليقات…</div>';
+    commentsSection.appendChild(commentsRoot);
+    engagement.appendChild(commentsSection);
 
     const related = article.querySelector('.article-related');
     if (related) related.before(engagement);
     else article.appendChild(engagement);
+
+    let commentsLoaded = false;
+    const localizeCommentForm = () => {
+      const box = commentsRoot.querySelector('#HCB_comment_box');
+      if (!box) return;
+      box.setAttribute('dir', 'rtl');
+      box.setAttribute('lang', 'ar');
+      const nameField = box.querySelector('#hcb_form_name');
+      if (nameField) nameField.placeholder = 'اسمك';
+      const commentField = box.querySelector('#hcb_form_content');
+      if (commentField) commentField.placeholder = 'اكتب تعليقك هنا';
+      const submitButton = box.querySelector('#hcb_submit');
+      if (submitButton) submitButton.value = 'إرسال التعليق';
+      box.querySelectorAll('h2, h3').forEach((heading) => {
+        if (/^comments?$/i.test(heading.textContent.trim())) heading.textContent = 'التعليقات';
+      });
+    };
+
+    const loadComments = () => {
+      if (commentsLoaded) return;
+      commentsLoaded = true;
+
+      const user = window.hcb_user || (window.hcb_user = {});
+      const canonical = document.querySelector('link[rel="canonical"]');
+      user.PAGE = canonical ? canonical.href : window.location.href.split('#')[0].split('?')[0];
+
+      const loadWidgetScript = () => {
+        const widgetScript = document.createElement('script');
+        widgetScript.type = 'text/javascript';
+        widgetScript.id = 'hcb';
+        widgetScript.async = true;
+        const page = encodeURIComponent(user.PAGE).replace(/\+/g, '%2B');
+        widgetScript.src = 'https://www.htmlcommentbox.com/jread?page=' + page
+          + '&mod=%241%24wq1rdBcg%24wRuJ5zDkcOgxNS3r%2Fjl3U.&opts=16798&num=10&ts=1792155003900';
+        widgetScript.addEventListener('error', () => {
+          const box = commentsRoot.querySelector('#HCB_comment_box');
+          if (box) box.textContent = 'تعذر تحميل التعليقات الآن. يرجى المحاولة لاحقًا.';
+        }, { once: true });
+        document.head.appendChild(widgetScript);
+      };
+
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0';
+      css.onload = loadWidgetScript;
+      css.onerror = loadWidgetScript;
+      document.head.appendChild(css);
+
+      const observer = new MutationObserver(localizeCommentForm);
+      observer.observe(commentsRoot, { childList: true, subtree: true, attributes: true });
+      localizeCommentForm();
+      window.setTimeout(() => observer.disconnect(), 15000);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const commentsObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          commentsObserver.disconnect();
+          loadComments();
+        }
+      }, { rootMargin: '250px 0px' });
+      commentsObserver.observe(commentsSection);
+    } else {
+      loadComments();
+    }
   }
 })();

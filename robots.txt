@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://al-khayal.space/sitemap.xml
-Sitemap: https://al-khayal.space/pages-sitemap.xml
-Sitemap: https://al-khayal.space/image-sitemap.xml
