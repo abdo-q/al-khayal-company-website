@@ -606,3 +606,16 @@ h1, h2, h3, p { margin-top: 0; }
 .article-related-links ul { display: grid; gap: 6px; margin: 0; padding-inline-start: 20px; }
 .article-related-links a { color: var(--brand-dark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .article-related-links a:hover { color: #9b6830; }
+
+/* Clear service discovery and local enquiry details, with mobile-first wrapping. */
+.home-service-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; list-style:none; padding:0; margin:24px 0 16px; }
+.home-service-links li { min-width:0; }
+.home-service-links a { display:flex; align-items:center; min-height:58px; padding:14px 16px; color:var(--brand-dark); text-decoration:none; font-weight:700; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.48); transition:transform .2s ease, border-color .2s ease; }
+.home-service-links a:hover { transform:translateY(-2px); border-color:#4b9d87; }
+.home-local-directory { margin:18px 0 0; color:var(--muted); }
+.home-local-directory a, .city-contact-cta a { color:var(--brand-dark); font-weight:700; text-underline-offset:3px; }
+.city-contact-cta { margin:0; padding:18px 20px; border-inline-start:3px solid #4b9d87; background:rgba(75,157,135,.07); border-radius:12px; }
+.city-contact-cta h2 { margin:0 0 8px; font-size:20px; color:var(--brand-dark); }
+.city-contact-cta p { margin:0; }
+@media (max-width:760px) { .home-service-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; } .home-service-links a { min-height:54px; padding:12px; font-size:14px; } }
+@media (max-width:420px) { .home-service-links { grid-template-columns:1fr; } }
