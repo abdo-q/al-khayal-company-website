@@ -82,96 +82,10 @@
   if (article && document.body.classList.contains('article-page')) {
     const engagement = document.createElement('section');
     engagement.className = 'article-engagement';
-    engagement.setAttribute('aria-label', 'التعليقات');
-
-    const commentsSection = document.createElement('section');
-    commentsSection.className = 'article-comments';
-    commentsSection.setAttribute('aria-labelledby', 'article-comments-title');
-    commentsSection.innerHTML = '<h2 id="article-comments-title">التعليقات</h2><p class="article-comments-intro">يمكنك إرسال سؤالك أو ملاحظتك عبر واتساب مباشرة. تحميل التعليقات الخارجية اختياري حتى لا تتأثر سرعة الصفحة.</p>';
-
-    const commentsRoot = document.createElement('div');
-    commentsRoot.className = 'article-hcb';
-    commentsRoot.innerHTML = '<p id="HCB_comment_box" dir="rtl" lang="ar">التعليقات متاحة عند الطلب.</p><button type="button" class="button button-secondary article-comments-load">تحميل التعليقات</button><p class="article-comments-status" role="status" aria-live="polite"></p>';
-    commentsSection.appendChild(commentsRoot);
-    engagement.appendChild(commentsSection);
-
+    engagement.setAttribute('aria-label', 'التواصل بشأن المقال');
+    engagement.innerHTML = '<section class="article-comments" aria-labelledby="article-comments-title"><h2 id="article-comments-title">هل لديك سؤال؟</h2><p class="article-comments-intro">التعليقات الخارجية متوقفة لتجنب بطء الصفحة. أرسل سؤالك مباشرة عبر واتساب وسنساعدك في اختيار الخدمة المناسبة.</p><a class="button button-secondary" href="https://wa.me/966552610151" target="_blank" rel="noopener noreferrer">إرسال سؤال عبر واتساب</a></section>';
     const related = article.querySelector('.article-related');
     if (related) related.before(engagement);
     else article.appendChild(engagement);
-
-    let commentsLoaded = false;
-    const localizeCommentForm = () => {
-      const box = commentsRoot.querySelector('#HCB_comment_box');
-      if (!box) return;
-      box.setAttribute('dir', 'rtl');
-      box.setAttribute('lang', 'ar');
-      const nameField = box.querySelector('#hcb_form_name');
-      if (nameField) nameField.placeholder = 'اسمك';
-      const commentField = box.querySelector('#hcb_form_content');
-      if (commentField) commentField.placeholder = 'اكتب تعليقك هنا';
-      const submitButton = box.querySelector('#hcb_submit');
-      if (submitButton) submitButton.value = 'إرسال التعليق';
-      box.querySelectorAll('h2, h3').forEach((heading) => {
-        if (/^comments?$/i.test(heading.textContent.trim())) heading.textContent = 'التعليقات';
-      });
-    };
-
-    const loadComments = () => {
-      if (commentsLoaded) return;
-      commentsLoaded = true;
-      const button = commentsRoot.querySelector('.article-comments-load');
-      const status = commentsRoot.querySelector('.article-comments-status');
-      if (button) {
-        button.disabled = true;
-        button.textContent = 'جارٍ تحميل التعليقات…';
-      }
-      const user = window.hcb_user || (window.hcb_user = {});
-      const canonical = document.querySelector('link[rel="canonical"]');
-      user.PAGE = canonical ? canonical.href : window.location.href.split('#')[0].split('?')[0];
-      let settled = false;
-      const fail = () => {
-        if (settled) return;
-        settled = true;
-        const box = commentsRoot.querySelector('#HCB_comment_box');
-        if (box) box.textContent = 'تعذر تحميل التعليقات الخارجية الآن. يمكنك التواصل معنا عبر واتساب بدلًا من ذلك.';
-        if (status) status.innerHTML = '<a class="text-link" href="https://wa.me/966552610151" target="_blank" rel="noopener noreferrer">إرسال سؤال عبر واتساب</a>';
-        if (button) button.remove();
-        document.querySelectorAll('script#hcb, link[data-hcb-style]').forEach((node) => node.remove());
-      };
-      const succeed = () => {
-        if (settled) return;
-        settled = true;
-        if (button) button.remove();
-        if (status) status.textContent = '';
-        localizeCommentForm();
-      };
-      const loadWidgetScript = () => {
-        if (settled) return;
-        const widgetScript = document.createElement('script');
-        widgetScript.type = 'text/javascript';
-        widgetScript.id = 'hcb';
-        widgetScript.async = true;
-        const page = encodeURIComponent(user.PAGE).replace(/\+/g, '%2B');
-        widgetScript.src = 'https://www.htmlcommentbox.com/jread?page=' + page + '&mod=%241%24wq1rdBcg%24wRuJ5zDkcOgxNS3r%2Fjl3U.&opts=16798&num=10&ts=1792155003900';
-        widgetScript.addEventListener('load', () => window.setTimeout(succeed, 300), { once: true });
-        widgetScript.addEventListener('error', fail, { once: true });
-        document.head.appendChild(widgetScript);
-      };
-      const css = document.createElement('link');
-      css.rel = 'stylesheet';
-      css.dataset.hcbStyle = 'true';
-      css.href = 'https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0';
-      css.onload = loadWidgetScript;
-      css.onerror = loadWidgetScript;
-      document.head.appendChild(css);
-      window.setTimeout(fail, 8000);
-      const observer = new MutationObserver(localizeCommentForm);
-      observer.observe(commentsRoot, { childList: true, subtree: true, attributes: true });
-      window.setTimeout(() => observer.disconnect(), 9000);
-    };
-
-    const loadButton = commentsRoot.querySelector('.article-comments-load');
-    if (loadButton) loadButton.addEventListener('click', loadComments, { once: true });
   }
-
 })();
