@@ -1100,3 +1100,10 @@ h1, h2, h3, p { margin-top: 0; }
   .mobile-contact-dock .top-contact-pair,
   .mobile-contact-dock .top-contact-button { transition: none; }
 }
+
+/* Restore the original straight edges for the two revealed action buttons. */
+@media (max-width: 600px) {
+  .mobile-contact-dock .top-contact-button {
+    border-radius: 0 !important;
+  }
+}
