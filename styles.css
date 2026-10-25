@@ -925,3 +925,57 @@ h1, h2, h3, p { margin-top: 0; }
   .mobile-contact-dock .top-contact-button { width: 58px; height: 50px; }
   .mobile-contact-dock .top-contact-button svg { width: 22px; height: 22px; }
 }
+
+/* The mobile trigger shines too, and its actions enter as an attached animated strip. */
+.top-contact-button {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.top-contact-label {
+  position: relative;
+  z-index: 2;
+  color: currentColor;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+@keyframes mobile-contact-toggle-shine {
+  0%, 34% { transform: translateX(-135%) skewX(-20deg); opacity: 0; }
+  43% { opacity: .95; }
+  68%, 100% { transform: translateX(135%) skewX(-20deg); opacity: 0; }
+}
+@keyframes mobile-contact-pop {
+  0% { opacity: 0; transform: translateX(14px) scale(.82); }
+  70% { transform: translateX(-2px) scale(1.03); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+@media (max-width: 600px) {
+  .mobile-contact-toggle {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .mobile-contact-toggle::before {
+    content: "";
+    position: absolute;
+    inset: -45% -80%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.9) 50%, transparent 62%);
+    transform: translateX(-135%) skewX(-20deg);
+    animation: mobile-contact-toggle-shine 3.1s ease-in-out infinite;
+  }
+  .mobile-contact-dock.is-open .top-contact-button {
+    animation: mobile-contact-pop .38s cubic-bezier(.2,.8,.25,1) both;
+  }
+  .mobile-contact-dock.is-open .top-contact-button:nth-child(1) { animation-delay: 0s; }
+  .mobile-contact-dock.is-open .top-contact-button:nth-child(2) { animation-delay: .08s; }
+  .mobile-contact-dock .top-contact-button { height: 58px; }
+  .mobile-contact-dock .top-contact-label { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-contact-toggle::before,
+  .mobile-contact-dock.is-open .top-contact-button { animation: none; }
+}
