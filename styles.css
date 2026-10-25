@@ -747,3 +747,7 @@ h1, h2, h3, p { margin-top: 0; }
   .whatsapp-button, .whatsapp-button::before, .whatsapp-button::after { animation: none; }
   .whatsapp-button { transition: none; }
 }
+
+.contact-inline-links { display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; }
+.contact-inline-links .text-link { font-weight: 700; }
+.keyword-copy { line-height: 2; }
