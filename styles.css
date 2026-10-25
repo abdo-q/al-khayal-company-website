@@ -1130,3 +1130,10 @@ h1, h2, h3, p { margin-top: 0; }
     max-height: 100%;
   }
 }
+
+/* Center each action icon and its label inside the full button box. */
+.top-contact-button {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
