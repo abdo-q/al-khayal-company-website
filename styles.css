@@ -751,3 +751,69 @@ h1, h2, h3, p { margin-top: 0; }
 .contact-inline-links { display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; }
 .contact-inline-links .text-link { font-weight: 700; }
 .keyword-copy { line-height: 2; }
+
+/* Restored two-button contact widget: phone plus the supplied glowing WhatsApp button. */
+.floating-contact .whatsapp-button--floating {
+  position: relative;
+  inset: auto;
+  width: 51px;
+  height: 54px;
+  min-height: 54px;
+  border: 0;
+  border-radius: 0;
+  transform: none;
+  animation: whatsapp-button-pulse-floating 2s ease-in-out infinite;
+}
+.floating-contact .whatsapp-button--floating:hover { transform: scale(1.06); }
+.floating-contact .whatsapp-button--floating:active { transform: scale(.94); }
+.floating-contact .whatsapp-button--floating::before { border-radius: 0; }
+.floating-contact .whatsapp-button--floating::after { border-radius: 0; }
+@keyframes whatsapp-button-pulse-floating {
+  0%, 100% { transform: scale(1); filter: brightness(1) saturate(1); }
+  50% { transform: scale(1.07); filter: brightness(1.18) saturate(1.12); }
+}
+.contact-page .contact-card,
+.contact-page .contact-direct,
+.contact-page .info-card,
+.contact-page .seo-page-image,
+.contact-page .contact-grid > *,
+.contact-page .content-grid > * {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.contact-page .contact-card,
+.contact-page .contact-direct,
+.contact-page .info-card { padding-inline: 0; }
+.contact-page .contact-direct { padding-block: 0; }
+.contact-page .contact-page-whatsapp {
+  position: relative;
+  inset: auto;
+  display: inline-grid;
+  width: 54px;
+  height: 54px;
+  vertical-align: middle;
+  transform: none;
+}
+.contact-page .contact-page-whatsapp:hover { transform: scale(1.06); }
+.contact-page .contact-page-whatsapp:active { transform: scale(.94); }
+@media (prefers-reduced-motion: reduce) {
+  .floating-contact .whatsapp-button--floating { animation: none; }
+}
+
+/* Contact page is intentionally flat: no card, hero, image, or section frames. */
+.contact-page .page-hero-inner,
+.contact-page .seo-page-image,
+.contact-page .contact-card,
+.contact-page .contact-direct,
+.contact-page .info-card,
+.contact-page .contact-form,
+.contact-page .content-grid > *,
+.contact-page .contact-grid > * {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.contact-page .seo-page-image { padding: 0; }
