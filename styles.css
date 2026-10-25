@@ -1025,3 +1025,39 @@ h1, h2, h3, p { margin-top: 0; }
   .mobile-contact-toggle,
   .mobile-contact-toggle::after { animation: none; }
 }
+
+/* Matching wave treatment for the revealed actions, with a tactile press state. */
+@keyframes mobile-contact-action-wave {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@media (max-width: 600px) {
+  .mobile-contact-toggle {
+    border-radius: 48% 52% 0 0 / 11px 15px 0 0;
+  }
+  .mobile-contact-dock .top-contact-button {
+    position: relative;
+    background-size: 220% 220% !important;
+    border-radius: 48% 52% 0 0 / 9px 12px 0 0 !important;
+    transition: transform .16s ease, filter .16s ease;
+  }
+  .mobile-contact-dock .top-contact-phone {
+    background: linear-gradient(125deg, #43b9e8 0%, #69d7ef 52%, #43b9e8 100%) !important;
+  }
+  .mobile-contact-dock .top-contact-whatsapp {
+    background: linear-gradient(125deg, #32c878 0%, #69e49a 52%, #32c878 100%) !important;
+  }
+  .mobile-contact-dock.is-open .top-contact-button {
+    animation: mobile-contact-pop .38s cubic-bezier(.2,.8,.25,1) both,
+      mobile-contact-action-wave 4s ease-in-out .38s infinite;
+  }
+  .mobile-contact-dock .top-contact-button:active,
+  .mobile-contact-dock .top-contact-button:focus-visible:active {
+    animation-play-state: paused;
+    transform: scale(.92);
+    filter: brightness(.88) saturate(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-contact-dock .top-contact-button { transition: none; }
+}
