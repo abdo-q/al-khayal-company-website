@@ -78,14 +78,5 @@
     node.textContent = new Date().getFullYear();
   });
 
-  const article = document.querySelector('.article-detail');
-  if (article && document.body.classList.contains('article-page')) {
-    const engagement = document.createElement('section');
-    engagement.className = 'article-engagement';
-    engagement.setAttribute('aria-label', 'التواصل بشأن المقال');
-    engagement.innerHTML = '<section class="article-comments" aria-labelledby="article-comments-title"><h2 id="article-comments-title">هل لديك سؤال؟</h2><p class="article-comments-intro">التعليقات الخارجية متوقفة لتجنب بطء الصفحة. أرسل سؤالك مباشرة عبر واتساب وسنساعدك في اختيار الخدمة المناسبة.</p><a class="button button-secondary" href="https://wa.me/966552610151" target="_blank" rel="noopener noreferrer">إرسال سؤال عبر واتساب</a></section>';
-    const related = article.querySelector('.article-related');
-    if (related) related.before(engagement);
-    else article.appendChild(engagement);
-  }
+
 })();
