@@ -856,3 +856,94 @@ h1, h2, h3, p { margin-top: 0; }
   transform: none;
 }
 .contact-page .contact-clean-layout .contact-page-whatsapp:hover { transform: scale(1.06); }
+
+/* Exact visual from whatsapp-contact-button(1).html, using its embedded PNG asset. */
+.reference-whatsapp-button {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  line-height: 0;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.reference-whatsapp-button__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: reference-whatsapp-pulse 2s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+.reference-whatsapp-button__shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(108deg, transparent 28%, rgba(255,255,255,.9) 49%, transparent 68%);
+  background-size: 220% 100%;
+  background-position: 135% 0;
+  opacity: 0;
+  mix-blend-mode: screen;
+  -webkit-mask-image: url('/images/whatsapp-contact-button.png');
+  mask-image: url('/images/whatsapp-contact-button.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: reference-whatsapp-shine 3.4s ease-in-out infinite;
+}
+.reference-whatsapp-button:focus-visible { outline: 2px solid #46df84; outline-offset: 3px; }
+@keyframes reference-whatsapp-pulse {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50% { filter: brightness(1.16) saturate(1.1); }
+}
+@keyframes reference-whatsapp-shine {
+  0%, 54% { background-position: 135% 0; opacity: 0; }
+  60% { opacity: .95; }
+  86%, 100% { background-position: -120% 0; opacity: 0; }
+}
+/* The restored phone + WhatsApp pair is green, borderless, and keeps the supplied WhatsApp image. */
+.floating-contact {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.floating-contact > .phone-link {
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  background: linear-gradient(155deg, #46df84, #169d57) !important;
+  box-shadow: none !important;
+}
+.floating-contact > .phone-link:hover { width: 56px; filter: brightness(1.08); }
+.floating-contact > .reference-whatsapp-button {
+  width: 56px;
+  height: 56px;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+.floating-contact > .reference-whatsapp-button .reference-whatsapp-button__image { width: 56px; height: 56px; }
+.contact-page .contact-page-whatsapp,
+.contact-page .contact-inline-links .reference-whatsapp-button {
+  position: relative;
+  inset: auto;
+  width: 76px;
+  height: 76px;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+}
+.contact-page .contact-page-whatsapp:hover,
+.contact-page .contact-inline-links .reference-whatsapp-button:hover { transform: scale(1.06); }
+.contact-page .contact-plain-link { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .reference-whatsapp-button__image, .reference-whatsapp-button__shine { animation: none; }
+}
