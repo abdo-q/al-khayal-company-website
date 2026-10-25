@@ -796,18 +796,20 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
 }
 
-/* Unified contact pair: flush together at the top center, with two distinct glowing colors. */
+/* Unified contact pair: flush together at the vertical center of the side edge. */
 .top-contact-pair {
   position: fixed;
-  top: 0;
-  left: 50%;
+  top: 50%;
+  right: 0;
   z-index: 11000;
   display: flex;
   gap: 0;
   align-items: stretch;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
   direction: ltr;
   border: 0;
+  border-radius: 4px 0 0 4px;
+  overflow: hidden;
   background: transparent;
 }
 .top-contact-button {
@@ -863,9 +865,4 @@ h1, h2, h3, p { margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .top-contact-button::before, .top-contact-button::after { animation: none; }
-}
-
-/* Contact image keeps its exact appearance, but only its visible lower-right shape accepts clicks. */
-.contact-page .reference-button {
-  clip-path: polygon(86% 36%, 100% 36%, 100% 100%, 59% 100%);
 }
