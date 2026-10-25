@@ -78,5 +78,31 @@
     node.textContent = new Date().getFullYear();
   });
 
+  // Cache local pages after the first visit so repeated keyword navigation is instant.
+  if ('serviceWorker' in navigator && window.isSecureContext) {
+    navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' }).catch(() => {});
+  }
+
+  const prefetched = new Set();
+  const prefetchLocalPage = (link) => {
+    if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+    const url = new URL(link.href, window.location.href);
+    if (url.origin !== window.location.origin || prefetched.has(url.href)) return;
+    prefetched.add(url.href);
+    const hint = document.createElement('link');
+    hint.rel = 'prefetch';
+    hint.as = 'document';
+    hint.href = url.href;
+    document.head.appendChild(hint);
+  };
+  document.addEventListener('pointerover', (event) => {
+    const link = event.target.closest('a');
+    if (link) prefetchLocalPage(link);
+  }, { passive: true });
+  document.addEventListener('focusin', (event) => {
+    const link = event.target.closest('a');
+    if (link) prefetchLocalPage(link);
+  });
+
 
 })();
