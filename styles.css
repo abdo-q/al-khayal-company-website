@@ -1023,3 +1023,33 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .reference-button__image, .reference-button__shine { animation: none; }
 }
+
+/* Light two-button pair for every page except contact.html. */
+.light-phone-button,
+.light-whatsapp-button {
+  position: fixed;
+  right: 0;
+  z-index: 10001;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  color: #155f3e !important;
+  text-decoration: none;
+  background: #dff8ea !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: filter .2s ease, transform .2s ease;
+}
+.light-phone-button { bottom: 74px; }
+.light-whatsapp-button { bottom: 10px; }
+.light-phone-button svg,
+.light-whatsapp-button svg { width: 24px; height: 24px; }
+.light-phone-button:hover,
+.light-whatsapp-button:hover { filter: brightness(.96); transform: translateX(-3px); }
+.contact-page .light-phone-button,
+.contact-page .light-whatsapp-button { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .light-phone-button, .light-whatsapp-button { transition: none; }
+}
