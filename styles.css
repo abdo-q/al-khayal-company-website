@@ -1061,3 +1061,42 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .mobile-contact-dock .top-contact-button { transition: none; }
 }
+
+/* Actions emerge from the trigger itself and fold back into it when closed. */
+@media (max-width: 600px) {
+  .mobile-contact-dock .top-contact-pair {
+    display: flex;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height .38s cubic-bezier(.2,.8,.25,1), opacity .22s ease;
+  }
+  .mobile-contact-dock.is-open .top-contact-pair {
+    max-height: 116px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-contact-dock .top-contact-button {
+    transform-origin: bottom center;
+    transform: translateY(48px) scale(.2);
+    opacity: 0;
+    animation: none !important;
+    transition: transform .34s cubic-bezier(.2,.8,.25,1), opacity .2s ease;
+  }
+  .mobile-contact-dock.is-open .top-contact-button {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  .mobile-contact-dock.is-open .top-contact-button:nth-child(1) { transition-delay: 0s; }
+  .mobile-contact-dock.is-open .top-contact-button:nth-child(2) { transition-delay: .07s; }
+  .mobile-contact-dock:not(.is-open) .top-contact-button:nth-child(1) { transition-delay: .07s; }
+  .mobile-contact-dock:not(.is-open) .top-contact-button:nth-child(2) { transition-delay: 0s; }
+  .mobile-contact-dock .top-contact-button:active {
+    transform: translateY(0) scale(.92);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-contact-dock .top-contact-pair,
+  .mobile-contact-dock .top-contact-button { transition: none; }
+}
