@@ -1137,3 +1137,12 @@ h1, h2, h3, p { margin-top: 0; }
   justify-content: center;
   text-align: center;
 }
+
+/* Blend the two action colors continuously so the buttons meet without a hard seam. */
+.top-contact-pair {
+  background: linear-gradient(180deg, #43b9e8 0%, #56d7c8 48%, #32c878 100%);
+}
+.top-contact-phone,
+.top-contact-whatsapp {
+  background: transparent !important;
+}
