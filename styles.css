@@ -869,3 +869,58 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .top-contact-button::before, .top-contact-button::after { animation: none; }
 }
+
+/* Mobile contact bar: the trigger stays visible and opens the two attached actions. */
+.mobile-contact-dock { display: contents; }
+.mobile-contact-toggle { display: none; }
+
+@media (max-width: 600px) {
+  .mobile-contact-dock {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 11001;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    transform: translateY(-50%);
+    direction: ltr;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    background: transparent;
+  }
+  .mobile-contact-dock .top-contact-pair {
+    position: static;
+    display: none;
+    transform: none;
+    flex-direction: column;
+    border-radius: 0;
+    overflow: visible;
+  }
+  .mobile-contact-dock.is-open .top-contact-pair { display: flex; }
+  .mobile-contact-toggle {
+    display: flex;
+    order: 2;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    min-height: 42px;
+    padding: 7px 5px;
+    color: #fff;
+    background: #176d56;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .mobile-contact-toggle:active { filter: brightness(.92); }
+  .mobile-contact-toggle:focus-visible { outline: 2px solid #e9ff95; outline-offset: -3px; }
+  .mobile-contact-dock .top-contact-button { width: 58px; height: 50px; }
+  .mobile-contact-dock .top-contact-button svg { width: 22px; height: 22px; }
+}
