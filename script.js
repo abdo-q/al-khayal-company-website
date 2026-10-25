@@ -87,11 +87,11 @@
     const commentsSection = document.createElement('section');
     commentsSection.className = 'article-comments';
     commentsSection.setAttribute('aria-labelledby', 'article-comments-title');
-    commentsSection.innerHTML = '<h2 id="article-comments-title">التعليقات</h2><p class="article-comments-intro">اكتب تعليقك أو سؤالك دون الحاجة إلى تسجيل الدخول. يُرجى عدم نشر معلومات شخصية أو أرقام خاصة.</p>';
+    commentsSection.innerHTML = '<h2 id="article-comments-title">التعليقات</h2><p class="article-comments-intro">يمكنك إرسال سؤالك أو ملاحظتك عبر واتساب مباشرة. تحميل التعليقات الخارجية اختياري حتى لا تتأثر سرعة الصفحة.</p>';
 
     const commentsRoot = document.createElement('div');
     commentsRoot.className = 'article-hcb';
-    commentsRoot.innerHTML = '<div id="HCB_comment_box" dir="rtl" lang="ar" aria-live="polite">جارٍ تحميل التعليقات…</div>';
+    commentsRoot.innerHTML = '<p id="HCB_comment_box" dir="rtl" lang="ar">التعليقات متاحة عند الطلب.</p><button type="button" class="button button-secondary article-comments-load">تحميل التعليقات</button><p class="article-comments-status" role="status" aria-live="polite"></p>';
     commentsSection.appendChild(commentsRoot);
     engagement.appendChild(commentsSection);
 
@@ -119,49 +119,59 @@
     const loadComments = () => {
       if (commentsLoaded) return;
       commentsLoaded = true;
-
+      const button = commentsRoot.querySelector('.article-comments-load');
+      const status = commentsRoot.querySelector('.article-comments-status');
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'جارٍ تحميل التعليقات…';
+      }
       const user = window.hcb_user || (window.hcb_user = {});
       const canonical = document.querySelector('link[rel="canonical"]');
       user.PAGE = canonical ? canonical.href : window.location.href.split('#')[0].split('?')[0];
-
+      let settled = false;
+      const fail = () => {
+        if (settled) return;
+        settled = true;
+        const box = commentsRoot.querySelector('#HCB_comment_box');
+        if (box) box.textContent = 'تعذر تحميل التعليقات الخارجية الآن. يمكنك التواصل معنا عبر واتساب بدلًا من ذلك.';
+        if (status) status.innerHTML = '<a class="text-link" href="https://wa.me/966552610151" target="_blank" rel="noopener noreferrer">إرسال سؤال عبر واتساب</a>';
+        if (button) button.remove();
+        document.querySelectorAll('script#hcb, link[data-hcb-style]').forEach((node) => node.remove());
+      };
+      const succeed = () => {
+        if (settled) return;
+        settled = true;
+        if (button) button.remove();
+        if (status) status.textContent = '';
+        localizeCommentForm();
+      };
       const loadWidgetScript = () => {
+        if (settled) return;
         const widgetScript = document.createElement('script');
         widgetScript.type = 'text/javascript';
         widgetScript.id = 'hcb';
         widgetScript.async = true;
         const page = encodeURIComponent(user.PAGE).replace(/\+/g, '%2B');
-        widgetScript.src = 'https://www.htmlcommentbox.com/jread?page=' + page
-          + '&mod=%241%24wq1rdBcg%24wRuJ5zDkcOgxNS3r%2Fjl3U.&opts=16798&num=10&ts=1792155003900';
-        widgetScript.addEventListener('error', () => {
-          const box = commentsRoot.querySelector('#HCB_comment_box');
-          if (box) box.textContent = 'تعذر تحميل التعليقات الآن. يرجى المحاولة لاحقًا.';
-        }, { once: true });
+        widgetScript.src = 'https://www.htmlcommentbox.com/jread?page=' + page + '&mod=%241%24wq1rdBcg%24wRuJ5zDkcOgxNS3r%2Fjl3U.&opts=16798&num=10&ts=1792155003900';
+        widgetScript.addEventListener('load', () => window.setTimeout(succeed, 300), { once: true });
+        widgetScript.addEventListener('error', fail, { once: true });
         document.head.appendChild(widgetScript);
       };
-
       const css = document.createElement('link');
       css.rel = 'stylesheet';
+      css.dataset.hcbStyle = 'true';
       css.href = 'https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0';
       css.onload = loadWidgetScript;
       css.onerror = loadWidgetScript;
       document.head.appendChild(css);
-
+      window.setTimeout(fail, 8000);
       const observer = new MutationObserver(localizeCommentForm);
       observer.observe(commentsRoot, { childList: true, subtree: true, attributes: true });
-      localizeCommentForm();
-      window.setTimeout(() => observer.disconnect(), 15000);
+      window.setTimeout(() => observer.disconnect(), 9000);
     };
 
-    if ('IntersectionObserver' in window) {
-      const commentsObserver = new IntersectionObserver((entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          commentsObserver.disconnect();
-          loadComments();
-        }
-      }, { rootMargin: '250px 0px' });
-      commentsObserver.observe(commentsSection);
-    } else {
-      loadComments();
-    }
+    const loadButton = commentsRoot.querySelector('.article-comments-load');
+    if (loadButton) loadButton.addEventListener('click', loadComments, { once: true });
   }
+
 })();
