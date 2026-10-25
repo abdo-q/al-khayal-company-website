@@ -947,3 +947,79 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .reference-whatsapp-button__image, .reference-whatsapp-button__shine { animation: none; }
 }
+
+/* Exact placement and behavior from whatsapp-contact-button(1).html. */
+.reference-button {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: block;
+  width: min(640px, 150vw);
+  line-height: 0;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.reference-button__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  animation: reference-whole-image-pulse 2s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+.reference-button__shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(108deg, transparent 28%, rgba(255,255,255,.9) 49%, transparent 68%);
+  background-size: 220% 100%;
+  background-position: 135% 0;
+  opacity: 0;
+  mix-blend-mode: screen;
+  -webkit-mask-image: url('/images/whatsapp-contact-button.png');
+  mask-image: url('/images/whatsapp-contact-button.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: reference-full-image-shine 3.4s ease-in-out infinite;
+}
+.reference-button:focus-visible { outline: 2px solid rgba(70,223,132,.95); outline-offset: -3px; }
+@keyframes reference-whole-image-pulse {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50% { filter: brightness(1.16) saturate(1.1); }
+}
+@keyframes reference-full-image-shine {
+  0%, 54% { background-position: 135% 0; opacity: 0; }
+  60% { opacity: .95; }
+  86%, 100% { background-position: -120% 0; opacity: 0; }
+}
+.phone-contact-button {
+  position: fixed;
+  right: 0;
+  bottom: 74px;
+  z-index: 10001;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  color: #fff !important;
+  text-decoration: none;
+  background: linear-gradient(155deg, #46df84, #169d57) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.phone-contact-button svg { width: 23px; height: 23px; }
+.phone-contact-button:hover { filter: brightness(1.08); }
+.contact-page .phone-contact-button { display: none; }
+.contact-page .reference-button { right: 0; bottom: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .reference-button__image, .reference-button__shine { animation: none; }
+}
