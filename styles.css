@@ -791,6 +791,19 @@ h1, h2, h3, p { margin-top: 0; }
   86%, 100% { background-position: -120% 0; opacity: 0; }
 }
 .contact-page .reference-button { right: 0; bottom: 0; }
+/* Match hit-testing to the visible silhouette inside the transparent PNG. */
+.contact-page .reference-button {
+  clip-path: polygon(
+    96.4% 30.5%, 100% 30.5%, 100% 100%, 58.8% 100%,
+    59% 97.3%, 58.9% 94.6%, 59.4% 92%, 60% 89.3%,
+    60.4% 86.6%, 60.5% 83.9%, 60.9% 81.3%, 61.7% 78.6%,
+    63.3% 75.9%, 65.3% 73.2%, 84.7% 70.5%, 85.8% 67.9%,
+    86.3% 65.2%, 86.7% 62.5%, 86.7% 59.8%, 86.7% 57.1%,
+    86.7% 54.5%, 86.7% 51.8%, 86% 49.1%, 85.7% 46.4%,
+    85.7% 43.8%, 86% 41.1%, 86.6% 38.4%, 87.9% 35.7%,
+    96.2% 33%, 96.4% 30.5%
+  );
+}
 @media (prefers-reduced-motion: reduce) {
   .reference-button__image, .reference-button__shine { animation: none; }
 }
