@@ -1146,3 +1146,14 @@ h1, h2, h3, p { margin-top: 0; }
 .top-contact-whatsapp {
   background: transparent !important;
 }
+
+/* Keep the same continuous blend on mobile; do not split the action colors again. */
+@media (max-width: 600px) {
+  .mobile-contact-dock .top-contact-pair {
+    background: linear-gradient(180deg, #43b9e8 0%, #56d7c8 48%, #32c878 100%) !important;
+  }
+  .mobile-contact-dock .top-contact-phone,
+  .mobile-contact-dock .top-contact-whatsapp {
+    background: transparent !important;
+  }
+}
