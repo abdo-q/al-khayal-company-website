@@ -817,3 +817,42 @@ h1, h2, h3, p { margin-top: 0; }
   box-shadow: none !important;
 }
 .contact-page .seo-page-image { padding: 0; }
+
+/* Final flat contact layout: no inherited card or panel treatment. */
+.contact-page .contact-flat-section,
+.contact-page .contact-clean-layout,
+.contact-page .contact-clean-layout .contact-methods,
+.contact-page .contact-clean-layout .contact-direct {
+  display: block;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+.contact-page .contact-clean-layout .contact-methods { margin-bottom: 34px; }
+.contact-page .contact-plain-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-inline-end: 24px;
+  padding: 8px 0;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  box-shadow: none;
+}
+.contact-page .contact-plain-link .info-icon { margin: 0; color: var(--brand-dark); }
+.contact-page .contact-plain-link strong,
+.contact-page .contact-plain-link small { display: block; }
+.contact-page .contact-plain-link small { color: var(--muted); margin-top: 4px; }
+.contact-page .contact-clean-layout .contact-direct > p { max-width: 920px; }
+.contact-page .contact-clean-layout .contact-inline-links { margin-top: 18px; }
+.contact-page .contact-clean-layout .contact-page-whatsapp {
+  position: relative;
+  inset: auto;
+  width: 54px;
+  height: 54px;
+  transform: none;
+}
+.contact-page .contact-clean-layout .contact-page-whatsapp:hover { transform: scale(1.06); }
