@@ -172,10 +172,8 @@ def contact_target(path: Path) -> str:
 
 def update_contact_links(text: str, path: Path) -> str:
     target = html.escape(contact_target(path), quote=True)
-    # The prominent CTA and the first fixed contact button always open the contact page.
+    # The prominent CTA always opens the contact page.
     text = re.sub(r'(<a\s+class=["\']nav-cta["\'][^>]*\bhref=["\'])([^"\']+)(["\'])', r'\g<1>' + target + r'\3', text, count=1, flags=re.I)
-    text = re.sub(r'(<aside\s+class=["\']floating-contact["\'][\s\S]*?<a\s+)([^>]*?\bhref=["\'])(?:tel:[^"\']+)(["\'])', r'\g<1>\g<2>' + target + r'\3', text, count=1, flags=re.I)
-    text = text.replace('aria-label="اتصال هاتفي على 055 261 0151"', 'aria-label="فتح صفحة الاتصال"', 1) if 'floating-contact' in text else text
     return text
 
 
@@ -183,7 +181,7 @@ def remove_contact_form(text: str, path: Path) -> tuple[str, bool]:
     if path.name != "contact.html":
         return text, False
     pattern = r'<form\s+class=["\']contact-form[\s\S]*?</form>'
-    replacement = '''<section class="contact-direct reveal" aria-labelledby="contact-direct-title"><h2 id="contact-direct-title">تواصل مباشرة مع الخيال كلين</h2><p>للاستفسار عن التنظيف أو الصيانة أو مكافحة الآفات، اتصل بنا أو افتح واتساب. اذكر المدينة ونوع الخدمة وتفاصيل الطلب، وسنراجع نطاق التغطية معك قبل تحديد الموعد.</p><div class="contact-direct-actions"><a class="button" href="tel:+966552610151">اتصال هاتفي</a><a class="button button-secondary" href="https://wa.me/966552610151" target="_blank" rel="noopener noreferrer">واتساب</a></div><p class="form-note">لا يتم إرسال أي بيانات عبر الموقع؛ التواصل يتم مباشرة عبر الهاتف أو واتساب.</p></section>'''
+    replacement = '''<section class="contact-direct reveal" aria-labelledby="contact-direct-title"><h2 id="contact-direct-title">تواصل مباشرة مع الخيال كلين</h2><p>للاستفسار عن التنظيف أو الصيانة أو مكافحة الآفات، اتصل بنا أو افتح واتساب. اذكر المدينة ونوع الخدمة وتفاصيل الطلب، وسنراجع نطاق التغطية معك قبل تحديد الموعد.</p><div class="contact-text-links"><a class="button" href="tel:+966552610151">اتصال هاتفي</a><a class="button button-secondary" href="https://wa.me/966552610151" target="_blank" rel="noopener noreferrer">واتساب</a></div><p class="form-note">لا يتم إرسال أي بيانات عبر الموقع؛ التواصل يتم مباشرة عبر الهاتف أو واتساب.</p></section>'''
     new, count = re.subn(pattern, replacement, text, count=1, flags=re.I)
     return new, bool(count)
 
