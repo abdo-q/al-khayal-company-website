@@ -285,6 +285,7 @@ h1, h2, h3, p { margin-top: 0; }
 .video-copy .video-caption { padding: 13px 15px; border-radius: 13px; background: var(--mint); color: var(--brand-dark); font-size: 12px; }
 
 
+.video-gallery-section { scroll-margin-top: 96px; }
 .video-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .video-gallery-card { overflow: hidden; border: 1px solid rgba(255,255,255,.92); border-radius: 22px; background: rgba(255,255,255,.82); box-shadow: var(--shadow); }
 .video-gallery-card video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: contain; background: #173b34; }
